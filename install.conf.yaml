@@ -10,3 +10,4 @@
 
 - link:
     ~/.config/nvim: nvim
+    ~/.zshrc: zsh/zshrc.zsh
