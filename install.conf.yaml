@@ -1,0 +1,12 @@
+# Settings
+- defaults:
+    link:
+        create: true
+        relink: true
+        force: false # we don't want to swap originals
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+
+- link:
+    ~/.config/nvim: nvim
