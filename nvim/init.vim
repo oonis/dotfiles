@@ -16,7 +16,7 @@ Plug 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair.
 Plug 'w0rp/ale' " Asynchronous Lint Engine.
 Plug 'sbdchd/neoformat' " Format code.
 Plug 'jremmen/vim-ripgrep' " Use RipGrep in Vim and display results in a quickfix list.
-Plug 'wakatime/vim-wakatime' " Wakatime
+
 Plug 'whonore/coqtail'
 Plug 'let-def/vimbufsync'
 
@@ -255,8 +255,8 @@ nnoremap <Leader>l vat:t'><CR>'[<Esc><CR>
 nmap <Leader>to   :e %:p:h<CR>
 " Yank function block
 nnoremap <Leader>tgt :exe search('^function','cb')';/}/y'<CR>
-" Dash doc lookup
-nnoremap <Leader>ttt :Dash<CR>
+
+
 " Write all changed buffers
 nnoremap <Leader>tttt :wa<CR>
 " Run commands in new splits
