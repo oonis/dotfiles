@@ -7,7 +7,6 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete" # Recursively dele
 alias g='git' # Wrapper over git
 alias peek='tee >(cat 1>&2)' # Mirror stdout to stderr, useful for seeing data going through a pipe
 alias aet='subl CONTRIBUTING.md'
-alias crypto='curl rate.sx' # Get crypto prices
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> public key copied to pasteboard'"
 alias lc='tokei'
 alias sf='screenfetch -E'
