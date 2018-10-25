@@ -3,11 +3,12 @@
     link:
         create: true
         relink: true
-        force: false # we don't want to swap originals
+        force: true
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
 
 - link:
+    ~/.zshrc: zsh/zshrc.zsh
     ~/.config/nvim: nvim
 

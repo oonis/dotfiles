@@ -1,0 +1,398 @@
+# Temp
+b() {
+  git add LICENSE
+  git commit -m 'license: update'
+  git push
+}
+
+findEmptyDirsAndFiles(){
+  find . -type f -exec bash -c 'if [ `cat "{}" |wc -w` -eq 0 ]; then echo "file - {}";fi' \; -or -empty -exec bash -c "echo dir - {}" \;
+}
+
+convertAllMDFilesToTabs(){
+ find . -name '*.md' ! -type d -exec bash -c 'expand -t 4 "$0" > /tmp/e && mv /tmp/e "$0"' {} \;
+}
+
+# Update Zsh plugins
+uz(){
+  antibody bundle <~/.dotfiles/zsh/plugins.txt >~/.zsh_plugins.sh
+  antibody update
+}
+
+# Pipe command to clipboard. l <cmd>
+l(){
+  "$@" | pbcopy
+}
+
+# Open files/project with VS Code TODO: w <tab> should autocomplete files
+w() {
+  if [ $# -eq 0 ]
+  then
+    code .
+  else
+    code "$@"
+  fi
+}
+
+# Search aliases/functions
+falias() {
+    CMD=$(
+        (
+            (alias)
+            (functions | grep "()" | cut -d ' ' -f1 | grep -v "^_" )
+        ) | fzf | cut -d '=' -f1
+    );
+
+    eval $CMD
+}
+
+# Open Xcode projects from the command line
+function co {
+  proj=$(ls -d *.xcodeproj/ 2>/dev/null)
+
+  if [ -n "$proj" ]; then
+    open -a Xcode "$proj"
+  else
+    echo "No Xcode project detected."
+  fi
+}
+
+# Lowercase every file in current dir
+lowercaseCurrentDir(){
+  for i in *; do mv $i ${(L)i}; done
+}
+
+# Show $PATH
+path(){
+  echo -e ${PATH//:/\\n}
+}
+
+# Install all node dependencies and run project
+it(){
+  npm install
+  npm start
+}
+
+# Fetch pull request
+fpr() {
+    if ! git rev-parse --git-dir > /dev/null 2>&1; then
+        echo "error: fpr must be executed from within a git repository"
+        return 1
+    fi
+    (
+        cdgr
+        if [ "$#" -eq 2 ]; then
+            local repo="${PWD##*/}"
+            local user="${1}"
+            local branch="${2}"
+        elif [ "$#" -eq 3 ]; then
+            local repo="${1}"
+            local user="${2}"
+            local branch="${3}"
+        else
+            echo "Usage: fpr [repo] username branch"
+            return 1
+        fi
+
+        git fetch "git@github.com:${user}/${repo}" "${branch}:${user}/${branch}"
+    )
+}
+
+# md <folder-name> - Create folder and cd to it
+md(){
+  mkdir "$1"
+  cd "$1"
+}
+
+# Get cheat sheet of command from cheat.sh. h <cmd>
+h(){
+  curl cheat.sh/${@:-cheat}
+  # curl cheat.sh/$@
+}
+
+# cfile <file> - Copy content of file to clipboard
+cfile(){
+  cat $1 | pbcopy
+}
+
+# re <files> - Move files to trash.
+re(){
+  mv "$@" ~/.Trash
+}
+
+# zs - Search for most visited directories from z index and open them in finder.
+zs() {
+  z $1 && open .
+}
+
+# mdg <dir-name> - Create dir and .go file of <dir-name> name.
+mdg() {
+    md $1
+    touch $1.go
+}
+
+# NOTE: Not sure if needed.
+# fix - Fixes antigen problems.
+fix() {
+    rm -rf ~/.antigen/.zcompdump
+    rm -rf ~/.antigen/.zcompdump.zwc
+    exec zsh
+}
+
+# wa <dir> - Go to do <dir> directory and open it with VS Code.
+wa() {
+    cd "$1"
+    code .
+}
+
+# dirfiles <dir> - Give number of files found inside given directory.
+dirfiles() {
+    find "$1" -type f | wc -l
+}
+
+# og <git-repo> - Go get the GitHub repo.
+og() {
+  go get -u "$@"
+}
+
+# rfg <file.go> - go run <file.go> on any Go file changes inside current dir.
+rfg() {
+  reflex -g '*.go' go run $1
+}
+
+# rft <file.py> - Rerun <file.py> on any Python file changes inside current dir.
+rft() {
+  reflex -g '*.py' python3 "$@"
+}
+
+# rfm <cmd-params> - Rerun main.go with <cmd-params> passed in on any Go files changes inside current dir.
+rfm() {
+    reflex -g '*.go' go run main.go $1
+}
+
+# wfj <file.js> - Rerun <file.js> on any JS file changes inside current dir.
+wfj() {
+    reflex -g '*.js' node $1
+}
+
+# af <cmd> - View definition of <cmd>.
+af() {
+  whence -f "$1"
+}
+
+# tc - Create and edit Cartfile.
+tc() {
+    touch Cartfile
+    chmod +x Cartfile
+    nvim Cartfile
+}
+
+# fl <text> - Find where <text> is contained within current dir.
+fl() {
+    grep -rnw . -e "$*"
+}
+
+# xo <xcode-proj> - Open Xcode project.
+xo(){
+  if test -n "$(find . -maxdepth 1 -name '*.xcworkspace' -print -quit)"
+  then
+    echo "Opening workspace"
+    open *.xcworkspace
+    return
+  else
+    if test -n "$(find . -maxdepth 1 -name '*.xcodeproj' -print -quit)"
+    then
+      echo "Opening project"
+      open *.xcodeproj
+      return
+    else
+      echo "Nothing found"
+    fi
+  fi
+}
+
+# down <url> - Download <url> and save to current dir.
+down(){
+curl -O "$1"
+}
+
+# cw - Copy working dir.
+cw() { printf %s "$PWD" | pbcopy; }
+
+# md <dir-name> - Create directory and cd into it.
+md() {
+  [[ -n "$1" ]] && mkdir -p "$1" && builtin cd "$1"
+}
+
+# server - Create server of current dir on port 8000 and open it in browser.
+server() {
+	local port="${1:-8000}"
+	sleep 1 && open "http://localhost:${port}/" &
+	# set the default content-type to `text/plain` instead of `application/octet-stream`
+	# and serve everything as utf-8 (although not technically correct, this doesn’t break anything for binary files)
+	python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
+}
+
+# compress <file/dir> - Compress <file/dir>.
+compress()
+  {
+    dirPriorToExe=`pwd`
+    dirName=`dirname $1`
+    baseName=`basename $1`
+
+    if [ -f $1 ] ; then
+      echo "It was a file change directory to $dirName"
+      cd $dirName
+      case $2 in
+        tar.bz2)
+          tar cjf $baseName.tar.bz2 $baseName
+          ;;
+        tar.gz)
+          tar czf $baseName.tar.gz $baseName
+          ;;
+        gz)
+          gzip $baseName
+          ;;
+        tar)
+          tar -cvvf $baseName.tar $baseName
+          ;;
+        zip)
+          zip -r $baseName.zip $baseName
+          ;;
+        *)
+          echo "Method not passed compressing using tar.bz2"
+          tar cjf $baseName.tar.bz2 $baseName
+          ;;
+      esac
+      echo "Back to Directory $dirPriorToExe"
+      cd $dirPriorToExe
+    else
+      if [ -d $1 ] ; then
+        echo "It was a Directory change directory to $dirName"
+        cd $dirName
+        case $2 in
+          tar.bz2)
+            tar cjf $baseName.tar.bz2 $baseName
+            ;;
+          tar.gz)
+            tar czf $baseName.tar.gz $baseName
+            ;;
+          gz)
+            gzip -r $baseName
+            ;;
+          tar)
+            tar -cvvf $baseName.tar $baseName
+            ;;
+          zip)
+            zip -r $baseName.zip $baseName
+            ;;
+          *)
+            echo "Method not passed compressing using tar.bz2"
+            tar cjf $baseName.tar.bz2 $baseName
+            ;;
+        esac
+        echo "Back to Directory $dirPriorToExe"
+        cd $dirPriorToExe
+      else
+        echo "'$1' is not a valid file/folder"
+      fi
+    fi
+    echo "Done"
+    echo "###########################################"
+  }
+
+# TODO: Write a Go CLI that wraps extract and compress functions + more.
+# extract <file.tar> - Extract <file.tar>.
+extract() {
+  local remove_archive
+  local success
+  local file_name
+  local extract_dir
+
+  if (( $# == 0 )); then
+    echo "Usage: extract [-option] [file ...]"
+    echo
+    echo Options:
+    echo "    -r, --remove    Remove archive."
+  fi
+
+  remove_archive=1
+  if [[ "$1" == "-r" ]] || [[ "$1" == "--remove" ]]; then
+    remove_archive=0
+    shift
+  fi
+
+  while (( $# > 0 )); do
+    if [[ ! -f "$1" ]]; then
+      echo "extract: '$1' is not a valid file" 1>&2
+      shift
+      continue
+    fi
+
+    success=0
+    file_name="$( basename "$1" )"
+    extract_dir="$( echo "$file_name" | sed "s/\.${1##*.}//g" )"
+    case "$1" in
+      (*.tar.gz|*.tgz) [ -z $commands[pigz] ] && tar zxvf "$1" || pigz -dc "$1" | tar xv ;;
+      (*.tar.bz2|*.tbz|*.tbz2) tar xvjf "$1" ;;
+      (*.tar.xz|*.txz) tar --xz --help &> /dev/null \
+        && tar --xz -xvf "$1" \
+        || xzcat "$1" | tar xvf - ;;
+    (*.tar.zma|*.tlz) tar --lzma --help &> /dev/null \
+      && tar --lzma -xvf "$1" \
+      || lzcat "$1" | tar xvf - ;;
+  (*.tar) tar xvf "$1" ;;
+  (*.gz) [ -z $commands[pigz] ] && gunzip "$1" || pigz -d "$1" ;;
+  (*.bz2) bunzip2 "$1" ;;
+  (*.xz) unxz "$1" ;;
+  (*.lzma) unlzma "$1" ;;
+  (*.Z) uncompress "$1" ;;
+  (*.zip|*.war|*.jar|*.sublime-package) unzip "$1" -d $extract_dir ;;
+  (*.rar) unrar x -ad "$1" ;;
+  (*.7z) 7za x "$1" ;;
+  (*.deb)
+    mkdir -p "$extract_dir/control"
+    mkdir -p "$extract_dir/data"
+    cd "$extract_dir"; ar vx "../${1}" > /dev/null
+    cd control; tar xzvf ../control.tar.gz
+    cd ../data; tar xzvf ../data.tar.gz
+    cd ..; rm *.tar.gz debian-binary
+    cd ..
+    ;;
+  (*)
+    echo "extract: '$1' cannot be extracted" 1>&2
+    success=1
+    ;;
+esac
+
+(( success = $success > 0 ? $success : $? ))
+(( $success == 0 )) && (( $remove_archive == 0 )) && rm "$1"
+shift
+  done
+}
+
+# List commit hashes
+commits() {
+  git log $1 --oneline --reverse | cut -d' ' -f 1 | tr '/n' ' '
+}
+
+# ram <process-name> - Find how much RAM a process is taking.
+ram() {
+  local sum
+  local items
+  local app="$1"
+  if [ -z "$app" ]; then
+    echo "First argument - pattern to grep from processes"
+  else
+    sum=0
+    for i in `ps aux | grep -i "$app" | grep -v "grep" | awk '{print $6}'`; do
+      sum=$(($i + $sum))
+    done
+    sum=$(echo "scale=2; $sum / 1024.0" | bc)
+    if [[ $sum != "0" ]]; then
+      echo "${fg[blue]}${app}${reset_color} uses ${fg[green]}${sum}${reset_color} MBs of RAM."
+    else
+      echo "There are no processes with pattern '${fg[blue]}${app}${reset_color}' are running."
+    fi
+  fi
+}
