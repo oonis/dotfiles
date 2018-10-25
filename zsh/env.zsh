@@ -11,6 +11,6 @@ export PATH=$PATH:~/.cargo/bin # Rust
 #export PATH="$PATH:$GOPATH/bin" # Go
 #export PATH=$PATH:~/.npm-global/bin # npm globally installed
 
-#. ~/.nix-profile/etc/profile.d/nix.sh # Nix working
+. ~/.nix-profile/etc/profile.d/nix.sh # Nix working
 
 typeset -U PATH # Remove duplicates in $PATH
