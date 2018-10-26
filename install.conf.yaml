@@ -11,4 +11,5 @@
 - link:
     ~/.zshrc: zsh/zshrc.zsh
     ~/.config/nvim: nvim
-
+    # Git
+    ~/.gitconfig: git/gitconfig
