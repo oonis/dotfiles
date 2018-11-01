@@ -138,14 +138,9 @@ dirfiles() {
     find "$1" -type f | wc -l
 }
 
-# og <git-repo> - Go get the GitHub repo.
+# og <git-repo> - Go get the git repo.
 og() {
   go get -u "$@"
-}
-
-# rfg <file.go> - go run <file.go> on any Go file changes inside current dir.
-rfg() {
-  reflex -g '*.go' go run $1
 }
 
 # rft <file.py> - Rerun <file.py> on any Python file changes inside current dir.
