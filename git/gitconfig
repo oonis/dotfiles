@@ -16,6 +16,12 @@
     renames = copy
     tool = nvimdiff
 
+[github]
+    user = oonis
+
+[commit]
+    gpgsign = true
+
 [core]
     editor = nvim
     excludesfile = ~/.gitignore_global
