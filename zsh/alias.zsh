@@ -13,7 +13,6 @@ alias sf='screenfetch -E'
 alias _='sudo'
 alias le='less -r'
 alias wifi='wifi-password -q'
-# alias du='du -sh * | sort'
 alias eo='echo'
 alias es='elasticsearch'
 alias mc='md-to-alfred'
@@ -89,9 +88,8 @@ alias ut='hugo server -w' # testing
 alias u='hugo'
 
 # Utility
-alias net="ping ya.ru | grep -E --only-match --color=never '[0-9\.]+ ms'"                # check connection
 alias history-stat="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
-alias ba="bash"
+alias ls="exa"
 
 # easier navigation
 alias ..="cd .."
