@@ -212,14 +212,6 @@ nnoremap <Leader>pu :PlugUpdate<CR>
 " Save
 nmap <Leader>w :w<CR>
 
-" Space e
-"nmap <Leader>e <Plug>(Prettier) :w<CR>
-
-" Space e
-" nmap <Leader>e.   :e .<CR>
-" Search files inside current dir
-" nnoremap <Leader>e :Files<CR>
-
 " Space d
 nmap <Leader>d :bd<CR>
 
@@ -321,7 +313,7 @@ endif
 
 " Auto commands
 au FileType dirvish call fugitive#detect(@%)
-au FocusLost * :wa " Auto save everything
+" au FocusLost * :wa " Auto save everything
 
 
 " Remaps
