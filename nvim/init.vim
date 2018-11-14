@@ -135,7 +135,7 @@ set viewoptions=cursor,slash,unix
 " Plugins
 let g:deoplete#enable_at_startup = 1 " Activate deoplete
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T'] " Trigger a highlight in the appropriate direction when pressing these keys
-let g:incsearch#auto_nohlsearch = 1 " TODO
+let g:incsearch#auto_nohlsearch = 1
 
 " Theme
 colorscheme monokai-night
