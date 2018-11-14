@@ -4,9 +4,9 @@ alias op='open'
 alias env='env | fzf'
 alias dnd='do-not-disturb toggle'
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete" # Recursively delete `.DS_Store` files
-alias g='git' # Wrapper over git
-alias peek='tee >(cat 1>&2)' # Mirror stdout to stderr, useful for seeing data going through a pipe
-alias aet='subl CONTRIBUTING.md'
+
+
+
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> public key copied to pasteboard'"
 alias lc='tokei'
 alias sf='screenfetch -E'
@@ -18,20 +18,20 @@ alias es='elasticsearch'
 alias mc='md-to-alfred'
 alias pd='pandoc'
 alias yt='yotube-dl'
-alias r='rg'
+
 alias e='nvim'
 alias s='subl'
 alias ss='subl .'
 alias alf='alfred'
-alias ta='touch readme.md'
-alias d='cd'
+
+
 alias alert="tput bel" # Bell when the program is finished. i.e. npm install && alert
-alias sd='sudo'
+
 alias lg='ls | grep'
 alias so='source'
 alias top="vtop"
-alias ka='echo'
-alias rl='curl'
+
+
 alias how='howdoi'
 alias ua='unalias'
 alias sudo='sudo '
