@@ -11,6 +11,7 @@
 - link:
     ~/.zshrc: zsh/zshrc.zsh
     ~/.config/nvim: nvim
+    ~/.hammerspoon: hammerspoon
     "~/Library/Application Support/Code/User/settings.json": vscode/settings.json
     ~/.gitconfig: git/gitconfig
     ~/.gitignore_global: git/gitignore_global
