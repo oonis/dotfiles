@@ -3,35 +3,22 @@ alias te='tree'
 alias op='open'
 alias env='env | fzf'
 alias dnd='do-not-disturb toggle'
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete" # Recursively delete `.DS_Store` files
-
-
-
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> public key copied to pasteboard'"
-alias lc='tokei'
 alias sf='screenfetch -E'
 alias _='sudo'
 alias le='less -r'
 alias wifi='wifi-password -q'
 alias eo='echo'
-alias es='elasticsearch'
-alias mc='md-to-alfred'
-alias pd='pandoc'
 alias yt='yotube-dl'
 
 alias e='nvim'
 alias s='subl'
 alias ss='subl .'
 alias alf='alfred'
-
-
-alias alert="tput bel" # Bell when the program is finished. i.e. npm install && alert
-
 alias lg='ls | grep'
 alias so='source'
 alias top="vtop"
-
-
 alias how='howdoi'
 alias ua='unalias'
 alias sudo='sudo '
@@ -68,14 +55,11 @@ alias lic='legit'
 
 # Python
 alias p='python'
-alias p2='python2'
 
 # Piping
 alias h2='head -n 2'
 alias h10='head -n 10'
 alias t10='tail -n 10'
-
-alias hs='ghci'
 
 alias cwd='pwd | pbcopy'
 
@@ -118,9 +102,6 @@ alias dsh='cd ~/.ssh'
 alias dz='cd ~/.dotfiles'
 alias de='cd ~/Desktop'
 alias dq='cd ~/Downloads'
-
-# Config
-alias d..='cd ~/.config'
 
 # Git
 alias gj='open `git config remote.origin.url`'

@@ -56,12 +56,6 @@ path(){
   echo -e ${PATH//:/\\n}
 }
 
-# Install all node dependencies and run project
-it(){
-  npm install
-  npm start
-}
-
 # Fetch pull request
 fpr() {
     if ! git rev-parse --git-dir > /dev/null 2>&1; then
