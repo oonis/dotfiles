@@ -1,4 +1,5 @@
 {
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.colorTheme": "Monokai Night"
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Monokai Night",
+    "editor.tabSize": 2
 }
