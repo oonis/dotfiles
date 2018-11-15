@@ -169,25 +169,6 @@ fl() {
     grep -rnw . -e "$*"
 }
 
-# xo <xcode-proj> - Open Xcode project.
-xo(){
-  if test -n "$(find . -maxdepth 1 -name '*.xcworkspace' -print -quit)"
-  then
-    echo "Opening workspace"
-    open *.xcworkspace
-    return
-  else
-    if test -n "$(find . -maxdepth 1 -name '*.xcodeproj' -print -quit)"
-    then
-      echo "Opening project"
-      open *.xcodeproj
-      return
-    else
-      echo "Nothing found"
-    fi
-  fi
-}
-
 # down <url> - Download <url> and save to current dir.
 down(){
 curl -O "$1"
