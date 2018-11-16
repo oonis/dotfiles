@@ -51,11 +51,6 @@ lowercaseCurrentDir(){
   for i in *; do mv $i ${(L)i}; done
 }
 
-# Show $PATH
-path(){
-  echo -e ${PATH//:/\\n}
-}
-
 # Fetch pull request
 fpr() {
     if ! git rev-parse --git-dir > /dev/null 2>&1; then
@@ -98,11 +93,6 @@ cfile(){
   cat $1 | pbcopy
 }
 
-# re <files> - Move files to trash.
-re(){
-  mv "$@" ~/.Trash
-}
-
 # zs - Search for most visited directories from z index and open them in finder.
 zs() {
   z $1 && open .
@@ -121,12 +111,6 @@ fix() {
     exec zsh
 }
 
-# wa <dir> - Go to do <dir> directory and open it with VS Code.
-wa() {
-    cd "$1"
-    code .
-}
-
 # dirfiles <dir> - Give number of files found inside given directory.
 dirfiles() {
     find "$1" -type f | wc -l
@@ -142,28 +126,6 @@ rft() {
   reflex -g '*.py' python3 "$@"
 }
 
-# rfm <cmd-params> - Rerun main.go with <cmd-params> passed in on any Go files changes inside current dir.
-rfm() {
-    reflex -g '*.go' go run main.go $1
-}
-
-# wfj <file.js> - Rerun <file.js> on any JS file changes inside current dir.
-wfj() {
-    reflex -g '*.js' node $1
-}
-
-# af <cmd> - View definition of <cmd>.
-af() {
-  whence -f "$1"
-}
-
-# tc - Create and edit Cartfile.
-tc() {
-    touch Cartfile
-    chmod +x Cartfile
-    nvim Cartfile
-}
-
 # fl <text> - Find where <text> is contained within current dir.
 fl() {
     grep -rnw . -e "$*"
@@ -174,26 +136,13 @@ down(){
 curl -O "$1"
 }
 
-# cw - Copy working dir.
-cw() { printf %s "$PWD" | pbcopy; }
-
 # md <dir-name> - Create directory and cd into it.
 md() {
   [[ -n "$1" ]] && mkdir -p "$1" && builtin cd "$1"
 }
 
-# server - Create server of current dir on port 8000 and open it in browser.
-server() {
-	local port="${1:-8000}"
-	sleep 1 && open "http://localhost:${port}/" &
-	# set the default content-type to `text/plain` instead of `application/octet-stream`
-	# and serve everything as utf-8 (although not technically correct, this doesn’t break anything for binary files)
-	python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
-}
-
 # compress <file/dir> - Compress <file/dir>.
-compress()
-  {
+compress() {
     dirPriorToExe=`pwd`
     dirName=`dirname $1`
     baseName=`basename $1`
@@ -259,7 +208,6 @@ compress()
     echo "###########################################"
   }
 
-# TODO: Write a Go CLI that wraps extract and compress functions + more.
 # extract <file.tar> - Extract <file.tar>.
 extract() {
   local remove_archive
@@ -334,23 +282,3 @@ commits() {
   git log $1 --oneline --reverse | cut -d' ' -f 1 | tr '/n' ' '
 }
 
-# ram <process-name> - Find how much RAM a process is taking.
-ram() {
-  local sum
-  local items
-  local app="$1"
-  if [ -z "$app" ]; then
-    echo "First argument - pattern to grep from processes"
-  else
-    sum=0
-    for i in `ps aux | grep -i "$app" | grep -v "grep" | awk '{print $6}'`; do
-      sum=$(($i + $sum))
-    done
-    sum=$(echo "scale=2; $sum / 1024.0" | bc)
-    if [[ $sum != "0" ]]; then
-      echo "${fg[blue]}${app}${reset_color} uses ${fg[green]}${sum}${reset_color} MBs of RAM."
-    else
-      echo "There are no processes with pattern '${fg[blue]}${app}${reset_color}' are running."
-    fi
-  fi
-}

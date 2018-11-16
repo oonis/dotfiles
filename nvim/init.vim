@@ -52,7 +52,6 @@ call plug#end()
 
 " Options
 set mouse=a " Copy selected text with mouse to system clipboard
-set undofile " Save undos after file closes
 set wildmode=longest:list,full " Complete longest common string, then each full match
 set updatetime=250 " If this many milliseconds nothing is typed the swap file will be written to disk
 set visualbell " Turn off the audio bell
@@ -329,7 +328,6 @@ nnoremap Y y$
 set guicursor=n-v-c:hor20,i-ci:ver20 " Make cursor block in insert mode and underline in normal mode
 autocmd VimLeave * set guicursor=a:ver25-blinkon25 " Make cursor block when leaving to shell
 
-" Testing
 set signcolumn=yes
 nnoremap <C-q> :q<cr>:q<cr>
 set foldcolumn=0 " Remove sidebar column
