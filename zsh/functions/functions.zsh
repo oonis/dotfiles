@@ -76,18 +76,6 @@ fpr() {
     )
 }
 
-# md <folder-name> - Create folder and cd to it
-md(){
-  mkdir "$1"
-  cd "$1"
-}
-
-# Get cheat sheet of command from cheat.sh. h <cmd>
-h(){
-  curl cheat.sh/${@:-cheat}
-  # curl cheat.sh/$@
-}
-
 # cfile <file> - Copy content of file to clipboard
 cfile(){
   cat $1 | pbcopy
@@ -280,5 +268,9 @@ shift
 # List commit hashes
 commits() {
   git log $1 --oneline --reverse | cut -d' ' -f 1 | tr '/n' ' '
+}
+
+re() {
+    mv "$1" ~/.Trash
 }
 
