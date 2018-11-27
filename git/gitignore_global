@@ -1,12 +1,8 @@
-### https://gist.github.com/octocat/9257657 ###
-
 # Compiled source
 *.com
 *.class
-*.dll
 *.exe
 *.o
-*.so
 
 # Node
 node_modules
@@ -68,13 +64,6 @@ tags
 
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
-
-### https://github.com/github/gitignore/blob/master/Go.gitignore ###
-# Binaries for programs and plugins
-*.exe
-*.dll
-*.so
-*.dylib
 
 # Test binary, build with `go test -c`
 *.test
@@ -225,7 +214,6 @@ acs-*.bib
 
 # knitr
 *-concordance.tex
-# TODO: comment the next line if you want to keep your tikz graphics files
 *.tikz
 *-tikzDictionary
 
