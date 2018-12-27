@@ -44,6 +44,7 @@ Plug 'mhinz/vim-signify' " Show a diff using Vim its sign column.
 " Deoplete
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') } " Asynchronous completion framework.
 Plug 'zchee/deoplete-jedi' " Deoplete source for jedi.
+Plug 'zchee/deoplete-clang' " Deoplete source for clang
 
 " Vim
 Plug 'Shougo/neco-vim', { 'for': 'vim' } " Vim source for neocomplete/deoplete.
