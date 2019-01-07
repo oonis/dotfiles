@@ -13,6 +13,10 @@ l(){
   "$@" | pbcopy
 }
 
+weather() {
+    curl wttr.in
+}
+
 transfer() { 
     if [ $# -eq 0 ];
     then
