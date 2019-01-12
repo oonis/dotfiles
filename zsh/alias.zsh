@@ -22,7 +22,6 @@ alias top="vtop"
 alias how='howdoi'
 alias ua='unalias'
 alias sudo='sudo '
-alias m='mkdir'
 alias jj='killall tmux'
 alias rec='asciinema rec'
 alias dus='du -s'

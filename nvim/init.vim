@@ -16,8 +16,8 @@ Plug 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair.
 Plug 'w0rp/ale' " Asynchronous Lint Engine.
 Plug 'sbdchd/neoformat' " Format code.
 Plug 'jremmen/vim-ripgrep' " Use RipGrep in Vim and display results in a quickfix list.
-Plug 'wakatime/vim-wakatime'
-" Plug 'whonore/coqtail'
+
+
 Plug 'let-def/vimbufsync'
 
 " Prettier support

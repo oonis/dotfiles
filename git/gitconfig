@@ -1,7 +1,7 @@
 [user]
     name = Sam Macaluso
     email = sam@macalu.so
-    signingkey = 04CCF6E87094EF3E
+    signingkey = AAFC635E03E2AB63
 
 [alias]
     update = add -u .
