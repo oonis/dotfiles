@@ -17,6 +17,10 @@ weather() {
     curl wttr.in
 }
 
+wifi-password() {
+    m wifi showpassword
+}
+
 transfer() { 
     if [ $# -eq 0 ];
     then

@@ -96,7 +96,7 @@ alias ww='code .'
 alias vim='nvim'
 
 # cd places
-alias dw='cd ~/Documents/'
+alias dw='cd ~/dev/'
 alias dsh='cd ~/.ssh'
 alias dz='cd ~/.dotfiles'
 alias de='cd ~/Desktop'
