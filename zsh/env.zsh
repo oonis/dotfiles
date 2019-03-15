@@ -8,7 +8,7 @@ export SUDO_EDITOR='nvim'
 export PATH=$PATH:~/.dotfiles/bin
 export PATH=$PATH:~/.cargo/bin # Rust
 export PATH="$PATH:$GOPATH/bin" # Go
-export GOPATH=$HOME/dev/go # Go TODO: This shouldn't be hardcoded
+export GOPATH=$HOME/Dev/go # Go TODO: This shouldn't be hardcoded
 
 . ~/.nix-profile/etc/profile.d/nix.sh # Nix working
 

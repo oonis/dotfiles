@@ -44,17 +44,6 @@ alias v='mv'
 alias os='osascript'
 alias lt='ls -lart'
 
-# Dev
-alias ll='ln -s'
-alias jd='jid'
-alias tm='task'
-alias rf='reflex'
-alias ser='serve'
-alias lic='legit'
-
-# Python
-alias p='python'
-
 # Piping
 alias h2='head -n 2'
 alias h10='head -n 10'

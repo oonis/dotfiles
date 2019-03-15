@@ -1,9 +1,0 @@
-{
-	"color_scheme": "Packages/ayu/ayu-dark.tmTheme",
-	"ignored_packages":
-	[
-		"Vintage"
-	],
-	"tab_size": 2,
-	"theme": "ayu-dark.sublime-theme"
-}
