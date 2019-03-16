@@ -12,8 +12,6 @@ alias eo='echo'
 alias yt='yotube-dl'
 
 alias e='nvim'
-alias s='subl'
-alias ss='subl .'
 alias alf='alfred'
 alias lg='ls | grep'
 alias so='source'
