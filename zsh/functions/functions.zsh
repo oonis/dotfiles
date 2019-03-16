@@ -17,10 +17,6 @@ weather() {
     curl wttr.in
 }
 
-wifi-password() {
-    m wifi showpassword
-}
-
 transfer() { 
     if [ $# -eq 0 ];
     then
@@ -57,22 +53,6 @@ falias() {
     );
 
     eval $CMD
-}
-
-# Open Xcode projects from the command line
-function co {
-  proj=$(ls -d *.xcodeproj/ 2>/dev/null)
-
-  if [ -n "$proj" ]; then
-    open -a Xcode "$proj"
-  else
-    echo "No Xcode project detected."
-  fi
-}
-
-# Lowercase every file in current dir
-lowercaseCurrentDir(){
-  for i in *; do mv $i ${(L)i}; done
 }
 
 # Fetch pull request
