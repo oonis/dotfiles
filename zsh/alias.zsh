@@ -8,7 +8,6 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> public key copied to pa
 alias sf='screenfetch -E'
 alias _='sudo'
 alias le='less -r'
-alias wifi='wifi-password -q'
 alias eo='echo'
 alias yt='yotube-dl'
 
@@ -76,8 +75,6 @@ alias mem='top -o rsize' # Memory
 alias bb='pbcopy'
 
 # Text editors
-alias xx='open -a Xcode'
-alias x.='open -a Xcode .'
 alias we='code'
 alias ww='code .'
 
@@ -85,7 +82,7 @@ alias ww='code .'
 alias vim='nvim'
 
 # cd places
-alias dw='cd ~/dev/'
+alias dw='cd ~/Dev/'
 alias dsh='cd ~/.ssh'
 alias dz='cd ~/.dotfiles'
 alias de='cd ~/Desktop'

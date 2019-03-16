@@ -1,7 +1,3 @@
-convertAllMDFilesToTabs(){
- find . -name '*.md' ! -type d -exec bash -c 'expand -t 4 "$0" > /tmp/e && mv /tmp/e "$0"' {} \;
-}
-
 # Update Zsh plugins
 uz(){
   antibody bundle <~/.dotfiles/zsh/plugins.txt >~/.zsh_plugins.sh
@@ -17,12 +13,12 @@ weather() {
     curl wttr.in
 }
 
-transfer() { 
+transfer() {
     if [ $# -eq 0 ];
     then
         echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md";
         return 1;
-    fi 
+    fi
     tmpfile=$( mktemp -t transferXXX );
     if tty -s;
     then
