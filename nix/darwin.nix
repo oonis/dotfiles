@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
   environment.systemPackages =
     [
       # tools
@@ -11,6 +12,7 @@
       pkgs.ffmpeg
       pkgs.coq
       pkgs.hyperfine
+      pkgs.openssl
       pkgs.cacert
       pkgs.antibody
       pkgs.gitAndTools.diff-so-fancy
@@ -24,6 +26,7 @@
       pkgs.clojure
       pkgs.go
       pkgs.ripgrep
+      pkgs.youtube-dl
       pkgs.mitmproxy
       pkgs.tree
       pkgs.kubectl
@@ -35,10 +38,14 @@
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
   nix.package = pkgs.nix;
-  programs.zsh.enableCompletion = false;
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    enableBashCompletion = true;
+    enableFzfHistory = true;
+    promptInit = "";
+  };
 
-  programs.zsh.enable = true;
-  programs.zsh.promptInit = "";
   nix.nixPath = [
     "darwin-config=$HOME/.dotfiles/nix/darwin.nix"
     "$HOME/.nix-defexpr/channels"

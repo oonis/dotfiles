@@ -31,7 +31,7 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'} " Interactive command execution.
 Plug 'tpope/vim-repeat' " Enable repeating supported plugin maps.
 Plug 'tpope/vim-surround' " Quoting/parenthesizing made simple.
 Plug 'junegunn/vim-easy-align' " Simple, easy-to-use alignment.
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fzf search. 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fzf search.
 Plug 'junegunn/fzf.vim' " Fzf search.
 Plug 'haya14busa/incsearch.vim' " Improved incremental searching.
 Plug 'easymotion/vim-easymotion' " Vim motions on speed.
@@ -210,12 +210,6 @@ nnoremap <Leader>pu :PlugUpdate<CR>
 " Save
 nmap <Leader>w :w<CR>
 
-" Space d
-nmap <Leader>d :bd<CR>
-
-" Space a
-nnoremap <Leader>a :wq<CR>
-
 " Space v
 " Write all changed buffers and exit vim
 nnoremap <Leader>vq :wqall<CR>
@@ -225,13 +219,6 @@ nnoremap <Leader>vm :make<CR>
 " Space o
 " Move 10 lines down (for karabiner sticky keys)
 nnoremap <Leader>o 29jzz
-
-" Space i
-nnoremap <Leader>ii :PlugInstall<CR>
-" Update plugins
-nnoremap <Leader>iu :PlugUpdate<CR>
-" Check vim health
-nnoremap <Leader>ih :CheckHealth<CR>
 
 " Space c
 " Switch dir for fzf searching to current dir
