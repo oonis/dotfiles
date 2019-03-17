@@ -1,6 +1,7 @@
 local hyper = {"ctrl","option","shift","cmd"}
 
 hs.loadSpoon("MiroWindowsManager")
+require('shortcuts')
 
 hs.window.animationDuration = 0.1
 spoon.MiroWindowsManager:bindHotkeys({
