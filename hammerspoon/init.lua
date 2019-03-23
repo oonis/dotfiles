@@ -1,4 +1,4 @@
-local hyper = {"ctrl","option","shift","cmd"}
+local hyper = {"ctrl","cmd"}
 
 hs.loadSpoon("MiroWindowsManager")
 require('shortcuts')

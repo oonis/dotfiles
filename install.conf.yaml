@@ -16,3 +16,4 @@
     "~/Library/Application Support/Code/User/settings.json": vscode/settings.json
     ~/.gitconfig: git/gitconfig
     ~/.gitignore_global: git/gitignore_global
+    ~/.config/karabiner.edn: karabiner/karabiner.edn
