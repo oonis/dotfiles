@@ -15,7 +15,6 @@
       pkgs.cacert
       pkgs.antibody
       pkgs.gitAndTools.diff-so-fancy
-      pkgs.google-cloud-sdk
       pkgs.direnv
       pkgs.wget
       pkgs.exa

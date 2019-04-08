@@ -80,7 +80,7 @@ alias ww='code .'
 alias vim='nvim'
 
 # cd places
-alias dw='cd ~/Dev/'
+alias dw='cd ~/Dev'
 alias dsh='cd ~/.ssh'
 alias dz='cd ~/.dotfiles'
 alias de='cd ~/Desktop'
@@ -131,4 +131,3 @@ alias gdn='git diff --name-only'
 # Git Status
 alias gs='git status --short'
 alias gss='git show --word-diff=color' # See changes made
-
