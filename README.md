@@ -1,14 +1,28 @@
 # Dotfiles
 
-Not expecting anyone to actually use this, but this holds all of my
-configuration files.
+This is my personal setup used on my daily driver, a 2012 MacBook Pro. The purpose of this repository is to give me an easy way to setup any new MacOS install, and if I'm lucky, inspire or help someone else.
 
-## Install
+## Key Bindings
 
-1. Boot fresh macOS install.
-2. Go through preferences and configure anything off the top.
-3. Download and install applications.
-4. Clone this repository and install
+### A more useful caps lock key
+
+By repurposing the anachronistic <kbd>caps lock</kbd> key, we can make <kbd>control</kbd> and <kbd>escape</kbd> accessible via the home row.
+
+- Tap <kbd>caps lock</kbd> for <kbd>escape</kbd>
+- Hold <kbd>caps lock</kbd> for <kbd>control</kbd>
+
+### (S)uper (D)uper Mode
+
+To activate, push the <kbd>s</kbd> and <kbd>d</kbd> keys simultaneously and hold them down. Now you're in (S)uper (D)uper Mode. It's optimized for keeping you on the home row, or very close to it. Now you can:
+
+- Use <kbd>h</kbd> / <kbd>j</kbd> / <kbd>k</kbd> / <kbd>l</kbd> for **left**/**down**/**up**/**right** respectively
+- Use <kbd>a</kbd> for <kbd>option</kbd> (AKA <kbd>alt</kbd>)
+- Use <kbd>f</kbd> for <kbd>command</kbd>
+- Use <kbd>space</kbd> for <kbd>shift</kbd>
+- Use <kbd>a</kbd> + <kbd>j</kbd> / <kbd>k</kbd> for <kbd>page down</kbd> / <kbd>page up</kbd>
+- Use <kbd>i</kbd> / <kbd>o</kbd> to move to the previous/next tab
+- Use <kbd>u</kbd> / <kbd>p</kbd> to go to the first/last tab (in most apps)
+- Use <kbd>a</kbd> + <kbd>h</kbd> / <kbd>l</kbd> to move to previous/next word (in most apps)
 
 #### Default app keybindings
 
@@ -21,13 +35,23 @@ configuration files.
 - <kbd>hyper</kbd> + <kbd>s</kbd> to open [Spotify](https://spotify.com) ("S" for "Spotify")
 - <kbd>hyper</kbd> + <kbd>t</kbd> to open [iTerm2](https://www.iterm2.com/) ("T" for "Terminal")
 
-### Miscellaneous goodness
+### Zsh keybindings
 
-- Use <kbd>control</kbd> + <kbd>-</kbd> (dash) to split iTerm2 panes horizontally
-- Use <kbd>control</kbd> + <kbd>|</kbd> (pipe) split iTerm2 panes vertically
-- Use <kbd>control</kbd> + <kbd>h</kbd> / <kbd>j</kbd> / <kbd>k</kbd> / <kbd>l</kbd> to move left/down/up/right by one pane in iTerm2
-- Use <kbd>control</kbd> + <kbd>u</kbd> to delete to the start of the line
-- Use <kbd>control</kbd> + <kbd>;</kbd> to delete to the end of the line
-- Use <kbd>option</kbd> + <kbd>h</kbd> / <kbd>l</kbd> to delete the previous/next word
+- Use <kbd>control</kbd> + <kbd>f</kbd> to go to the beginning of the line
+- Use <kbd>control</kbd> + <kbd>g</kbd> to go to the end of the line
+- Use <kbd>control</kbd> + <kbd>n</kbd> to go to go forward one word
+- Use <kbd>control</kbd> + <kbd>b</kbd> to go to go back one word
+- Use <kbd>control</kbd> + <kbd>e</kbd> to delete the line
+
+## Dependencies
+
+- macOS
+- [Karabiner-Elements 12.2.0][karabiner]
+- [Hammerspoon 0.9.73][hammerspoon]
+
+## Installation
+
+TODO
 
 ## TODO
+- This section, as well!
