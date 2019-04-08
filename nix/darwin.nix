@@ -1,51 +1,54 @@
 { config, pkgs, ... }:
 
 {
-  nixpkgs.config.allowUnfree = true;
   environment.systemPackages =
     [
       # tools
       pkgs.git
+      pkgs.cmake
+      pkgs.idris
       pkgs.gitAndTools.hub
       pkgs.neovim
       pkgs.vim
       pkgs.ffmpeg
-      pkgs.coq
       pkgs.hyperfine
-      pkgs.openssl
       pkgs.cacert
       pkgs.antibody
       pkgs.gitAndTools.diff-so-fancy
+      pkgs.google-cloud-sdk
       pkgs.direnv
       pkgs.wget
       pkgs.exa
       pkgs.fzf
+      pkgs.httpie
       pkgs.hugo
       pkgs.texlive.combined.scheme-full
       pkgs.nix
       pkgs.clojure
       pkgs.go
       pkgs.ripgrep
-      pkgs.youtube-dl
       pkgs.mitmproxy
       pkgs.tree
       pkgs.kubectl
+      pkgs.cloc
       pkgs.minikube
-      pkgs.cmake
       pkgs.screenfetch
+
+      # python
+      pkgs.python3
+      pkgs.python2Full
+      pkgs.python36Packages.pip
+      pkgs.python36Packages.autopep8
+      pkgs.python36Packages.black
     ];
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
   nix.package = pkgs.nix;
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    enableBashCompletion = true;
-    enableFzfHistory = true;
-    promptInit = "";
-  };
+  programs.zsh.enableCompletion = false;
 
+  programs.zsh.enable = true;
+  programs.zsh.promptInit = "";
   nix.nixPath = [
     "darwin-config=$HOME/.dotfiles/nix/darwin.nix"
     "$HOME/.nix-defexpr/channels"
@@ -62,4 +65,5 @@
   nix.maxJobs = 4;
   # Can cause instability in builds if more than 1
   nix.buildCores = 1;
+
 }
