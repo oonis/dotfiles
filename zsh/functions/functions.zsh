@@ -1,7 +1,18 @@
+# Update nix-darwin configuration
+un(){
+  darwin-rebuild switch
+  __ETC_ZSHENV_SOURCED= exec zsh
+}
+
 # Update Zsh plugins
 uz(){
   antibody bundle <~/.dotfiles/zsh/plugins.txt >~/.zsh_plugins.sh
   antibody update
+}
+
+# Delete branches that have been squashed and merged into master (https://github.com/not-an-aardvark/git-delete-squashed)
+gdelsquashed() {
+  git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done
 }
 
 # Pipe command to clipboard. l <cmd>
@@ -107,11 +118,6 @@ dirfiles() {
 # og <git-repo> - Go get the git repo.
 og() {
   go get -u "$@"
-}
-
-# rft <file.py> - Rerun <file.py> on any Python file changes inside current dir.
-rft() {
-  reflex -g '*.py' python3 "$@"
 }
 
 # fl <text> - Find where <text> is contained within current dir.
@@ -263,11 +269,6 @@ esac
 (( $success == 0 )) && (( $remove_archive == 0 )) && rm "$1"
 shift
   done
-}
-
-# List commit hashes
-commits() {
-  git log $1 --oneline --reverse | cut -d' ' -f 1 | tr '/n' ' '
 }
 
 re() {

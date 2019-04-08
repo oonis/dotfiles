@@ -2,6 +2,12 @@
 
 This is my personal setup used on my daily driver, a 2012 MacBook Pro. The purpose of this repository is to give me an easy way to setup any new MacOS install, and if I'm lucky, inspire or help someone else.
 
+##### Contents
+
+- [Key Bindings](#key-bindings)
+- [Zsh](#Zsh)
+- [Installation](#nstallation)
+
 ## Key Bindings
 
 ### A more useful caps lock key
@@ -35,7 +41,7 @@ To activate, push the <kbd>s</kbd> and <kbd>d</kbd> keys simultaneously and hold
 - <kbd>hyper</kbd> + <kbd>s</kbd> to open [Spotify](https://spotify.com) ("S" for "Spotify")
 - <kbd>hyper</kbd> + <kbd>t</kbd> to open [iTerm2](https://www.iterm2.com/) ("T" for "Terminal")
 
-### Zsh keybindings
+### Shell keybindings
 
 - Use <kbd>control</kbd> + <kbd>f</kbd> to go to the beginning of the line
 - Use <kbd>control</kbd> + <kbd>g</kbd> to go to the end of the line
@@ -43,15 +49,17 @@ To activate, push the <kbd>s</kbd> and <kbd>d</kbd> keys simultaneously and hold
 - Use <kbd>control</kbd> + <kbd>b</kbd> to go to go back one word
 - Use <kbd>control</kbd> + <kbd>e</kbd> to delete the line
 
-## Dependencies
+## Zsh
 
-- macOS
-- [Karabiner-Elements 12.2.0][karabiner]
-- [Hammerspoon 0.9.73][hammerspoon]
+I am using [Zsh](http://www.zsh.org) as my shell and [Antibody](https://github.com/getantibody/antibody) to manage my plugins.
+
+### Alias and functions
+
+To make things easier I like to use alias and functions for common command sequences.
+TODO: Actually talk about the alias and functions
 
 ## Installation
 
-TODO
-
-## TODO
-- This section, as well!
+1. Install [Karabiner-Elements 12.2.0][karabiner] if missing
+2. Install [Hammerspoon 0.9.73][hammerspoon] if you haven't already
+3. TODO: Finish this

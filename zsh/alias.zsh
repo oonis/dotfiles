@@ -2,7 +2,6 @@
 alias te='tree'
 alias op='open'
 alias env='env | fzf'
-alias dnd='do-not-disturb toggle'
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> public key copied to pasteboard'"
 alias sf='screenfetch -E'
@@ -81,7 +80,6 @@ alias vim='nvim'
 
 # cd places
 alias dw='cd ~/Dev'
-alias dsh='cd ~/.ssh'
 alias dz='cd ~/.dotfiles'
 alias de='cd ~/Desktop'
 alias dq='cd ~/Downloads'
