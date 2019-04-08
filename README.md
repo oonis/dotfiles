@@ -11,13 +11,4 @@ configuration files.
 4. Clone this repository and install
 
 # Guide
-
-## Shortcuts
-
-### Hyper Key (Caps Lock)
-
-I use the hyper key as a way to do application level changes such as opening or bringing focus to,
-or maybe resizing.
-- Hyper+t: Open or focus iTerm
-- Hyper+s: Open or focus Safari
-- Hyper+c: Open or focus Visual Studio Code
+TODO

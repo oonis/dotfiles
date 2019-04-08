@@ -16,5 +16,4 @@
     "~/Library/Application Support/Code/User/settings.json": vscode/settings.json
     ~/.gitconfig: git/gitconfig
     ~/.gitignore_global: git/gitignore_global
-    ~/.inputrc: iTerm/inputrc
     ~/.config/karabiner/karabiner.json: karabiner/karabiner.json
