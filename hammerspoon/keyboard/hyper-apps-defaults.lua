@@ -2,7 +2,7 @@
 return {
   { 'b', 'Safari' },              -- "B" for "Browser"
   { 'c', 'Discord' },             -- "C" for "Chat"
-  { 'd', '2Do' },                 -- "D" for "Do!" ... or "Done!"
+  { 'd', '2Do' },                 -- "D" for "Do!"
   { 'e', 'Visual Studio Code' },  -- "E" for "Editor"
   { 'f', 'Finder' },              -- "F" for "Finder"
   { 'g', 'Mailplane' },           -- "G" for "Gmail"
