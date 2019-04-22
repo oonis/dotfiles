@@ -1,5 +1,4 @@
 {
-  // looks
   "workbench.colorCustomizations": {
     "editor.lineHighlightBackground": "#212121"
   },
@@ -7,7 +6,6 @@
     "editor.formatOnSave": true
   },
   "reason_language_server.dependencies_codelens": false,
-  // editor
   "editor.renderLineHighlight": "line",
   "editor.hideCursorInOverviewRuler": true,
   "editor.scrollBeyondLastLine": false,
@@ -26,7 +24,6 @@
   "editor.tabSize": 2,
   "editor.lineNumbers": "on",
   "editor.cursorStyle": "line",
-  // workbench
   "workbench.tree.horizontalScrolling": true,
   "workbench.statusBar.feedback.visible": false,
   "workbench.fontAliasing": "antialiased",
@@ -36,29 +33,23 @@
   "workbench.editor.showIcons": false,
   "workbench.settings.enableNaturalLanguageSearch": false,
   "workbench.colorTheme": "Monokai Night",
-  // window
   "window.restoreWindows": "all",
   "window.title": "${activeEditorMedium}${separator}${rootName}",
   "window.newWindowDimensions": "maximized",
-  // debug
   "debug.openDebug": "neverOpen",
   "debug.showInStatusBar": "never",
   "debug.toolBarLocation": "hidden",
-  // fonts
   "editor.fontFamily": "Fira Code",
   "terminal.integrated.fontSize": 12,
   "editor.fontLigatures": true,
   "editor.fontSize": 12,
-  // search
   "search.smartCase": true,
   "search.exclude": {
     "dist": true,
     "out": true,
     "coverage": true
   },
-  // terminal
   "terminal.integrated.copyOnSelection": true,
-  // files
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "files.exclude": {
@@ -70,30 +61,23 @@
     "**/npm-debug.log": true,
     "**/*.bs.js": true
   },
-  // explorer
   "explorer.openEditors.visible": 0,
   "explorer.confirmDragAndDrop": false,
   "explorer.decorations.badges": false,
-  // python
   "python.linting.pylintArgs": [
     "--errors-only"
   ],
-  // code runner
   "code-runner.clearPreviousOutput": true,
   "code-runner.executorMap": {
     "python": "python3"
   },
-  // prettier
   "editor.formatOnSave": true,
-  // code runner
   "code-runner.runInTerminal": false,
-  // vim
   "vim.leader": " ",
   "vim.cursorStylePerMode.normal": "underline",
   "vim.useSystemClipboard": true,
   "vim.easymotion": true,
   "vim.easymotionMarkerBackgroundColor": "red",
-  // space map
   "vim.normalModeKeyBindings": [
     {
       "before": [
@@ -192,7 +176,6 @@
       ]
     }
   ],
-  // go
   "go.liveErrors": {
     "enabled": true,
     "delay": 500
@@ -201,26 +184,19 @@
   "go.lintOnSave": "package",
   "go.useLanguageServer": true,
   "go.gocodePackageLookupMode": "gb",
-  // files
   "files.associations": {
     "*.toml": "toml"
   },
   "explorer.confirmDelete": false,
-  // latex
   "latex-workshop.message.update.show": false,
-  // TODO: maybe not need?
-  // typescript
   "typescript.check.npmIsInstalled": false,
   "typescript.updateImportsOnFileMove.enabled": "never",
-  // javascript
   "javascript.updateImportsOnFileMove.enabled": "never",
-  // git
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.ignoreLimitWarning": true,
   "git.enableSmartCommit": true,
   "git.ignoreMissingGitWarning": true,
-  // gitlens
   "gitlens.codeLens.enabled": false,
   "gitlens.settings.mode": "advanced",
   "gitlens.historyExplorer.enabled": true,
@@ -241,10 +217,8 @@
     "suppressUpdateNotice": true,
     "suppressWelcomeNotice": false
   },
-  // sync settings & extensions
   "sync.removeExtensions": true,
   "sync.syncExtensions": true,
-  // extensions
   "extensions.ignoreRecommendations": true,
   "extensions.showRecommendationsOnlyOnDemand": true,
   "gitlens.views.fileHistory.enabled": true,
