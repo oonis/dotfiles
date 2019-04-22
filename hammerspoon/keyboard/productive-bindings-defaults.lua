@@ -10,6 +10,7 @@ return {
   showHelp = true,
   trigger = 'p',
   mappings = {
-
+    { {}, 'd',  'todo' },
+    { {}, 't',  'trello' }
   }
 }
