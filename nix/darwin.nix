@@ -30,8 +30,8 @@
       pkgs.tree
       pkgs.kubectl
       pkgs.cloc
-      pkgs.minikube
-      pkgs.screenfetch
+      #pkgs.minikube
+      #pkgs.screenfetch
 
       # python
       pkgs.python3
