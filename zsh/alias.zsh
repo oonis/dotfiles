@@ -10,7 +10,6 @@ alias le='less -r'
 alias eo='echo'
 alias yt='yotube-dl'
 
-alias e='nvim'
 alias alf='alfred'
 alias lg='ls | grep'
 alias so='source'
@@ -37,6 +36,8 @@ alias a='exa'
 alias aa='exa -la' # See hidden files
 alias wg='wget -r --no-parent'
 alias v='mv'
+alias vs='vagrant status'
+alias vu='vagrant up'
 alias os='osascript'
 alias lt='ls -lart'
 
