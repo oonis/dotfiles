@@ -7,6 +7,7 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    - [mkdir -p ~/Dev, Creating Dev folder]
 
 - link:
     ~/.zshrc: zsh/zshrc.zsh
