@@ -6,6 +6,7 @@ brew "getantibody/tap/antibody"
 brew "git"
 brew "go"
 brew "exa"
+brew "node"
 
 cask "font-fira-code"
 cask "iterm2"
