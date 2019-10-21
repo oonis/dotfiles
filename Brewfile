@@ -7,6 +7,8 @@ brew "git"
 brew "go"
 brew "exa"
 brew "node"
+brew "yarn"
+brew "diff-so-fancy"
 
 cask "font-fira-code"
 cask "iterm2"
