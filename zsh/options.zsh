@@ -1,5 +1,5 @@
 # Completions
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -i
 # Matches case insensitive for lowercase
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 compdef w=-redirect-,-default-,-default- # Gives w <tab> autocomplete
