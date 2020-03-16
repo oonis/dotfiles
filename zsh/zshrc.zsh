@@ -9,5 +9,8 @@ source ~/.dotfiles/zsh/functions/git-functions.zsh
 source ~/.dotfiles/zsh/bindings.zsh
 source ~/.dotfiles/zsh/alias.zsh
 
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

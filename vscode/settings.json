@@ -39,7 +39,7 @@
   "debug.openDebug": "neverOpen",
   "debug.showInStatusBar": "never",
   "debug.toolBarLocation": "hidden",
-  "editor.fontFamily": "Fira Code",
+  "editor.fontFamily": "JetBrains Mono",
   "terminal.integrated.fontSize": 12,
   "editor.fontLigatures": true,
   "editor.fontSize": 12,

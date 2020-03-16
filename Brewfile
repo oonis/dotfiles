@@ -7,4 +7,4 @@ brew "go"
 brew "exa"
 brew "node"
 brew "diff-so-fancy"
-
+brew "nvm"
