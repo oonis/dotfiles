@@ -36,20 +36,9 @@ source $ZSH/oh-my-zsh.sh
 
 autoload -U add-zsh-hook
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[[ -s /Users/sam/.autojump/etc/profile.d/autojump.sh ]] && source /Users/sam/.autojump/etc/profile.d/autojump.sh
 
-
-load-nvmrc() {
-  if [[ -f .nvmrc && -r .nvmrc ]]; then
-    nvm use &> /dev/null
-  else
-    nvm use stable
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+autoload -U compinit && compinit -u
 
 # Customize to your needs...
 unsetopt correct
