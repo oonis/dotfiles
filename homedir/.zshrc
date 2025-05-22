@@ -43,5 +43,7 @@ autoload -U compinit && compinit -u
 # Customize to your needs...
 unsetopt correct
 
+eval "$(mise activate zsh)"
+
 # run fortune on new terminal :)
 fortune
